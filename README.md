@@ -20,6 +20,8 @@ variables and compile them.
 # Download
 You can download packed file containing ISO and documentation, or just documentation here:
 
+Download only SSDK documentation | https://drive.google.com/file/d/10uLYB5o7rKGByWG8KUSKZzvlcV8Vs86J/view
+
 # Mount squashfs
 You can mount squashfs of this distribution on your existing Linux distribution you are using instead of running this in 
 virtual machine or on your actual PC.
