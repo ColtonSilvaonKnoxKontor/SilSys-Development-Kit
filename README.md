@@ -94,7 +94,7 @@ mount -vt tmpfs tmpfs $SSDK/run
 4. Then copy and execute this script as a whole:
 ```
 if [ -h $SSDK/dev/shm ]; then
-  install -v -d -m 1777 $LFS$(realpath /dev/shm)
+  install -v -d -m 1777 $SSDK$(realpath /dev/shm)
 else
   mount -vt tmpfs -o nosuid,nodev tmpfs $SSDK/dev/shm
 fi
