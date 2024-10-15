@@ -20,11 +20,33 @@ variables and compile them.
 # Download
 You can download packed file containing ISO and documentation, or just documentation here:
 
-Download only SSDK documentation | https://drive.google.com/file/d/10uLYB5o7rKGByWG8KUSKZzvlcV8Vs86J/view
+Download only SSDK documentation
 
-# Mount squashfs
+**Google Drive** | https://drive.google.com/file/d/10uLYB5o7rKGByWG8KUSKZzvlcV8Vs86J/view
+
+**Academia** | https://www.academia.edu/124710314/SSDK_0_1_Documentation
+
+Packed ISO and documentation
+> Note that this ISO alone is over 10GB as many tools and utilities related to game development is packed in this distribution, plus the standard Debian applications is also included. So if you are using metered internet service and don't want to waste every kilobyte you have, just wait for my upcoming release of compiled SDK and utilities just for you.
+
+
+## Mount squashfs
 You can mount squashfs of this distribution on your existing Linux distribution you are using instead of running this in 
-virtual machine or on your actual PC.
+virtual machine or on your actual PC. In this way, you can use your machine's full processing speed. To do this:
+
+1. Mount the ISO. In any file manager in your linux distro, right click the ISO file and select **_Disk Image Mounter_**.
+2. Click the sblive at the mounted devices. Go to `Live` folder, and look for `filesystem.squashfs`.
+3. Now, open the terminal by right clicking the area, navigating through three dot icon, file or options depending on what file manager you are using. Then elevate into administrative account by `sudo -i`, or if outputs `user is not in sudoer's file`, execute `su root` instead. Now if you are not in a directory where `filesystem.squashfs` resides, just do `cd`. Usually the mounted ISO file is located in `/media/username` where `username` is your actual user's account.
+4. Create a folder into `mnt` directory, any name you may like as we will put the contents of the `filesystem.squashfs` into that folder, even **dick** or **vagina** will do. To do this, execute `mkdir -v foldername` where `-v` outputs the result of the created folder, and `foldername` is your chosen folder name.
+5. Now mount the `filesystem.squashfs` into `foldername`. Just execute `mount -v -o loop -t squashfs filesystem.squashfs /mnt/foldername` where `-v` output results, `-o` is an option with escalted privileges, and `t` is a filesystem type. To see if the `filesystem.squashfs` is actually mounted on `/mnt/foldername`, navigate it using your file manager.
+
+Anyway, the mounted `filesystem.squashfs` can be chrooted to use SSDK environment and all of the tools easily, even if you are using fedora-based distribution.
+
+## Chroot into SDK
+Now, you want to setup SSDK environment in order to execute commands without symlinking or setting up `PATH` variables to directories where the toolchains and utilities resides. This step requires to mount virtual filesystem that is part of Linux kernel and entering SSDK environment so that you can do anything you want without affecting your main host distribution.
+
+1. As root, create an environment variable `SSDK` as our shortcut instead of typing full directory name which can consume century of years. To do that, execute `export SSDK=/mnt/foldername` where `foldername` is the name of your folder that you did in [Mount squashfs](#mount-squashfs) setion. To check if it takes effect, either look for the long-list `env` command, or just `echo $SSDK`. **I WARNED YOU, IF YOU DID NOT CHECK THE SSDK VARIABLE AND EXECUTE THESE REMAINING STEPS, IT MAY TAMPER YOUR SYSTEM AND CAN CAUSE SEVERE ISSUES**
+2. Now, mount the `/dev`
 
 # Contact Details
 If you found this distribution useful and you are interested in this concept, you can message me at:
