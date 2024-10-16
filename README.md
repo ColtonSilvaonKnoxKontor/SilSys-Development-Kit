@@ -60,7 +60,7 @@ You can mount squashfs of this distribution without copying this whole filesyste
 
 1. Mount the ISO. In any file manager in your linux distro, right click the ISO file and select **_Disk Image Mounter_**.
 2. Click the sblive at the mounted devices. Go to `Live` folder, and look for `filesystem.squashfs`.
-3. Now, open the terminal by right clicking the area, navigating through three dot icon, file or options depending on what file manager you are using then elevate into root. Now if you are not in a directory where `filesystem.squashfs` resides, just do `cd`. Usually the mounted ISO file is located in `/media/username` where `username` is your actual user's account.
+3. Now, open the terminal by right clicking the area, navigating through three dot icon, file or options depending on what file manager you are using then elevate into root. If you are not in a directory where `filesystem.squashfs` resides, just do `cd`. Usually the mounted ISO file is located in `/media/username` where `username` is your actual user's account.
 
 4. Create a folder into `mnt` directory, any name you may like as we will put the contents of the `filesystem.squashfs` into that folder, even **dick** or **vagina** will do. To do this, execute:
 ```
